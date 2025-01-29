@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <script defer src="~/js/main.js"></script>
+    <link rel="stylesheet" href="~/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Doodle+Shadow&family=Sedgwick+Ave+Display&display=swap"
+        rel="stylesheet">
+</head>
+
+<header>
+    <div class="contact-header">
+        <p><i class="fa-solid fa-phone"></i> Tel: 00 - 11 22 33</p>
+        <p id="topmail">
+            <i class="fa-solid fa-envelope"></i>
+            Epost: dogs4all@mail.se
+        </p>
+    </div>
+
+    <div class="top-container">
+        <div class="logo">
+            <a asp-controller="Home" asp-action="Index"><img src="~/img/doglogo.png" alt="Logotyp"></a>
+            <h1 class="logotext">Dogs4All</h1>
+        </div>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    @* Meny med tag-helpers *@
+    <nav class="menu">
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+            <li><a asp-controller="Home" asp-action="About">Om oss</a></li>
+            <li><a asp-controller="Home" asp-action="Breeds">Raser</a></li>
+        </ul>
+    </nav>
+</header>
+
+@* Huvudinnehåll *@
+<div class="container">
+    <main>
+        @RenderBody()
+    </main>
+</div>
+
+<footer>
+    <p>DT191G &copy; 2025 Adela Knap</p>
+</footer>

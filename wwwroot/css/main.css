@@ -1,0 +1,219 @@
+body {
+    max-width: 1920px;
+    background-color: #f8f6f6;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.7em;
+}
+
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0 2%;
+    color: white;
+    font-size: 0.9em;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 2222;
+}
+
+.logo img {
+    width: 120px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.logotext {
+    font-family: "Sedgwick Ave Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+}
+
+/* Meny för mindre skärmar */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5%;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: black;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+}
+
+/* Menyn större skärmar */
+.menu {
+    padding: 0 20%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li a {
+    font-size: 1.2em;
+    color: black;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: #1A2A77;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1600px;
+    padding: 0;
+}
+
+main {
+    padding: 1%;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    max-width: 1920px;
+}
+
+/* STARTSIDAN */
+.container {
+    text-align: center;
+}
+
+.intro-text {
+    text-align: center;
+    padding: 2%;
+}
+
+.dogs,
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 1%;
+    margin-bottom: 5%;
+}
+
+.dog {
+    width: 30%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dog:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dog img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        z-index: 999;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        height: auto;
+        text-align: right;
+        padding: 10%;
+        line-height: 3em;
+        background-color: rgba(202, 196, 196, 0.96);
+        z-index: 99;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 25px;
+        padding: 8% 2%;
+    }
+
+    .menu ul li a {
+        color: black;
+    }
+
+    .menu ul li a:hover {
+        color: #1A2A77;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .logotext {
+        font-size: 28px;
+    }
+
+    /* ALLMÄNNA FÖR TEXT */
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+}

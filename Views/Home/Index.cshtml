@@ -1,0 +1,47 @@
+@model IEnumerable<DT191G_MVC.Models.DogModel>
+
+@{
+    ViewData["Title"] = "Startsida";
+}
+
+<div class="banner">
+    <img src="~/img/dogheader.jpg" alt="En hund som spanar över fjället">
+</div>
+
+<main>
+    <div class="intro-text">
+        <h2>POPULÄRA RASER</h2>
+        <p>Här är lite kort information om några av våra populäraste hundraser.</p>
+    </div>
+
+    <section class="dogs">
+        <div class="dog">
+            <img src="~/img/bild1.jpg" alt="Bild på produkt">
+            <h3>LABRADOR RETRIVER</h3>
+            <p>Fakta om labrador...</p>
+        </div>
+
+        <div class="dog">
+            <img src="~/img/bild2.jpg" alt="Bild på produkt">
+            <h3>GOLDEN RETRIVER</h3>
+            <p>Fakta om golden...</p>
+        </div>
+
+        <div class="dog">
+            <img src="~/img/bild3.jpg" alt="Bild på produkt">
+            <h3>SCHÄFER</h3>
+            <p>Fakta om schäfer</p>
+        </div>
+    </section>
+
+    <h3>Några övriga hundraser att läsa mer om:</h3>
+
+    <div class="dogs">
+        @foreach (var dog in Model)
+        {
+            <a href="@dog.Url" title="Klicka här för att läsa mer om rasen" class="dog" target="_blank">@dog.Breed</a>
+        }
+
+    </div>
+
+</main>
