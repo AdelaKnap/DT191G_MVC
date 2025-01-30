@@ -1,5 +1,21 @@
+@model List<DT191G_MVC.Models.FormModel>
+
 @{
-    ViewData["Title"] = "Raser";
+    ViewData["Title"] = "Hundar";
 }
 
-<p>Lite text...</p>
+<h2>Tillagda hundar</h2>
+
+<main>
+    <section class="dogs">
+        @foreach (var dog in Model)
+        {
+            <div class="dog">
+                <p>Namn: @dog.DogName</p>
+                <p>Ras: @dog.BreedName</p>
+                <p>Ålder: @dog.Age</p>
+                <p>Är matte/husse hund-nörd: @(dog.DogLover.GetValueOrDefault() ? "Ja" : "Nej")</p> 
+            </div>
+        }
+    </section>
+</main>

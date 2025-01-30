@@ -1,5 +1,43 @@
+@model DT191G_MVC.Models.FormModel
+
 @{
     ViewData["Title"] = "Om oss";
 }
 
-<p>Lite text...</p>
+<h2>Om oss</h2>
+
+@if (ViewData["Message"] != null)
+{
+    <p style="color: green;">@ViewData["Message"]</p>
+}
+
+<form method="post">
+    <div class="errorMessages" asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="DogName"></label>
+        <input asp-for="DogName" />
+        <br>
+    </div>
+
+    <div>
+        <label asp-for="BreedName"></label>
+        <input asp-for="BreedName" />
+        <br>
+    </div>
+
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+        <br>
+    </div>
+
+    <div>
+        <label>Är du en hund-nörd?</label>
+        <input type="radio" asp-for="DogLover" value="true" /> Ja
+        <input type="radio" asp-for="DogLover" value="false" /> Nej
+        <br>
+    </div>
+
+    <input class="btn" type="submit" value="Lägg till hund" />
+</form>
