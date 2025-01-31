@@ -1,43 +1,38 @@
-@model IEnumerable<DT191G_MVC.Models.DogModel>
+@model List<DT191G_MVC.Models.DogModel>
 
 @{
     ViewData["Title"] = "Startsida";
 }
 
-<main>
-    <div class="intro-text">
-        <h2>POPULÄRA RASER</h2>
-        <p>Här är lite kort information om några av våra populäraste hundraser.</p>
-    </div>
+@* Fyll namn vid ny session *@
+<div>
+    @if (string.IsNullOrEmpty(ViewBag.UserName))
+    {
+        <form class="welcomeForm" method="post" asp-action="SaveName">
+            <label for="userName">Skriv ditt namn:</label>
+            <input type="text" name="userName" required />
+            <button class="btn" type="submit">Spara</button>
+        </form>
+    }
+</div>
 
-    <section class="dogs">
-        <div class="dog">
-            <img src="~/img/bild1.jpg" alt="Bild på produkt">
-            <h3>LABRADOR RETRIVER</h3>
-            <p>Fakta om labrador...</p>
-        </div>
+<h2>Välkommen till Dogs4All</h2>
 
-        <div class="dog">
-            <img src="~/img/bild2.jpg" alt="Bild på produkt">
-            <h3>GOLDEN RETRIVER</h3>
-            <p>Fakta om golden...</p>
-        </div>
+<div class="intro-text">
+    <h3>Några populära hundraser</h3>
+    <p>Här är lite kort information om några av våra populäraste hundraser.</p>
+</div>
 
-        <div class="dog">
-            <img src="~/img/bild3.jpg" alt="Bild på produkt">
-            <h3>SCHÄFER</h3>
-            <p>Fakta om schäfer</p>
-        </div>
-    </section>
+@* partial med raser *@
+<partial name="_PopularBreeds" />
 
-    <h3>Några övriga hundraser att läsa mer om:</h3>
+<h3>Några övriga hundraser att läsa mer om:</h3>
 
-    <div class="dogs">
-        @foreach (var dog in Model)
-        {
-            <a href="@dog.Url" title="Klicka här för att läsa mer om rasen" class="dog" target="_blank">@dog.Breed</a>
-        }
-
-    </div>
-
-</main>
+<ul class="moreDogs">
+    @foreach (var dog in Model)
+    {
+        <li>
+            <a href="@dog.Url" title="Klicka här för att läsa mer om rasen" target="_blank">@dog.Breed</a>
+        </li>
+    }
+</ul>

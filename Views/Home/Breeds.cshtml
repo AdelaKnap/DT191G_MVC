@@ -6,16 +6,22 @@
 
 <h2>Tillagda hundar</h2>
 
-<main>
-    <section class="dogs">
-        @foreach (var dog in Model)
-        {
-            <div class="dog">
-                <p>Namn: @dog.DogName</p>
-                <p>Ras: @dog.BreedName</p>
-                <p>Ålder: @dog.Age</p>
-                <p>Är matte/husse hund-nörd: @(dog.DogLover.GetValueOrDefault() ? "Ja" : "Nej")</p> 
-            </div>
-        }
-    </section>
-</main>
+<section class="dogs">
+    @foreach (var dog in Model)
+    {
+        <div class="dog">
+            <p>Namn: @dog.DogName</p>
+            <p>Ras: @dog.BreedName</p>
+            <p>Ålder: @dog.Age</p>
+            <p>Är matte/husse hund-nörd: @(dog.DogLover.GetValueOrDefault() ? "Ja" : "Nej")</p>
+        </div>
+    }
+</section>
+
+<div class="intro-text">
+    <h2>POPULÄRA RASER</h2>
+    <p>Om du missade att läsa om våra populäraste raser på startsidan så kommer den delen här igen!</p>
+</div>
+
+@* partial med raser *@
+<partial name="_PopularBreeds" />

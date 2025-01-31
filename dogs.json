@@ -13,15 +13,5 @@
         "Id": 3,
         "Breed": "Dalmatiner",
         "Url": "https://www.skk.se/hundraser/dalmatiner/"
-    },
-    {
-        "Id": 4,
-        "Breed": "Norwichterrier",
-        "Url": "https://www.skk.se/hundraser/norwichterrier/"
-    },
-    {
-        "Id": 5,
-        "Breed": "Tollare",
-        "Url": "https://www.skk.se/hundraser/nova-scotia-duck-tolling-retriever/"
     }
 ]

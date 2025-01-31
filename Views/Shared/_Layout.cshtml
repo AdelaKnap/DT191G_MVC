@@ -53,6 +53,13 @@
     <img src="~/img/dogheader1.jpg" alt="En hund som spanar över fjället">
 </div>
 
+<div class="welcome">
+    @if (!string.IsNullOrEmpty(ViewBag.UserName))    // Skriv ut namnet med viewbag
+    {
+        <p>Välkommen @ViewBag.UserName!</p>
+    }
+</div>
+
 @* Huvudinnehåll *@
 <div class="container">
     <main>

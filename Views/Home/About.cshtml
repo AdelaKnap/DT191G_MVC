@@ -6,10 +6,13 @@
 
 <h2>Om oss</h2>
 
-@if (ViewData["Message"] != null)
-{
-    <p style="color: green;">@ViewData["Message"]</p>
-}
+<div class="intro-text">
+    <p>
+        Välkommen till Dogs4All!<br>
+        På den här webbplatsen kan du läsa mer om olika raser men även lägga till din egen hund! <br><br>
+        Fyll i formuläret nedan så läggs din hund till på sidan "Hundar".
+    </p>
+</div>
 
 <form method="post">
     <div class="errorMessages" asp-validation-summary="All"></div>

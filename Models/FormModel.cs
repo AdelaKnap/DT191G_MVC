@@ -18,9 +18,6 @@ public class FormModel
     [Display(Name = "Ålder:")]
     public int? Age { get; set; }
 
-    // [Required]
-    // public required string Color { get; set; }    // Dropdown
-
     [Required(ErrorMessage = "Du måste välja om du är en hund-nörd eller inte.")]
     public bool? DogLover { get; set; }
 }
