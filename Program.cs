@@ -1,5 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();   // Aktivera MVC
+builder.Services.AddControllersWithViews();   // Aktivera/lägg till MVC
 builder.Services.AddSession();               // Lägg till session
 
 var app = builder.Build();
